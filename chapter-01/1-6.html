@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header class="page-header">
+			<nav>
+				<ul id="main-nav" class="nav">
+					<li><a href="/">Home</a></li>
+					<li><a href="/coffees">Coffees</a></li>
+					<li><a href="/brewers">Brewers</a></li>
+					<li>
+						<a href="/specials" class="featured">Specials</a>
+					</li>
+				</ul>
+			</nav>
+			<blockquote>
+				修饰links的选择器要按照特定顺序设置， LoVe/HAte——link, visited, hover,
+				active。
+			</blockquote>
+		</header>
+		<style>
+			.nav {
+				margin-top: 10px;
+				list-style: none;
+				padding-left: 0;
+			}
+			.nav li {
+				display: inline-block;
+			}
+			blockquote {
+				background-color: #dfa;
+				width: 375px;
+			}
+			a:link {
+				color: blue;
+				text-decoration: none;
+			}
+			a:visited {
+				color: purple;
+			}
+			a:hover {
+				text-decoration: underline;
+			}
+			a:active {
+				color: red;
+			}
+		</style>
+	</body>
+</html>

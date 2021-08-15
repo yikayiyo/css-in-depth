@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header class="page-header">
+			<h1 id="page-title" class="title">Wombat Coffee Roasters</h1>
+			<blockquote>h1的字体最终由id选择器中的声明决定</blockquote>
+			<nav>
+				<ul id="main-nav" class="nav">
+					<li><a href="/">Home</a></li>
+					<li><a href="/coffees">Coffees</a></li>
+					<li><a href="/brewers">Brewers</a></li>
+					<li><a href="/specials" class="featured">Specials</a></li>
+				</ul>
+			</nav>
+		</header>
+	</body>
+	<style>
+		h1 {
+			font-family: serif;
+		}
+		#page-title {
+			font-family: sans-serif;
+		}
+		.title {
+			font-family: monospace;
+		}
+		blockquote {
+			background-color: #dfa;
+			width: 375px;
+		}
+	</style>
+</html>
