@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header class="page-header">
+			<h1 class="title">Wombat Coffee Roasters</h1>
+		</header>
+
+		<blockquote>
+			虽然标签选择器h1中设置了font-weight为bold，但是之后的类选择器中使用了简写属性font，其中没有指定font-weight，因此font-weight的层叠值为font-weight的默认值normal
+		</blockquote>
+		<style>
+			blockquote {
+				background-color: #dfa;
+				width: 375px;
+			}
+			h1 {
+				font-weight: bold;
+			}
+			.title {
+				font: 32px Helvetica, Arial, sans-serif;
+			}
+		</style>
+	</body>
+</html>

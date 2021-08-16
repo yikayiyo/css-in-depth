@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header class="page-header">
+			<nav>
+				<ul id="main-nav" class="nav">
+					<li><a href="/">Home</a></li>
+					<li><a href="/coffees">Coffees</a></li>
+					<li><a href="/brewers">Brewers</a></li>
+					<li>
+						<a href="/specials" class="featured">Specials</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<footer class="footer">
+			&copy; 2016 Wombat Coffee Roasters &mdash;
+			<a href="/terms-of-use">Terms of use</a>
+		</footer>
+		<blockquote>
+			footer中a的color属性被设置为initial，它会使用浏览器默认的a的color样式。
+			initial修饰的是属性，而不是元素。
+		</blockquote>
+		<style>
+			.nav {
+				margin-top: 10px;
+				list-style: none;
+				padding-left: 0;
+			}
+			.nav li {
+				display: inline-block;
+			}
+			blockquote {
+				background-color: #dfa;
+				width: 375px;
+			}
+			a:link {
+				color: blue;
+				text-decoration: none;
+			}
+			a:visited {
+				color: purple;
+			}
+			a:hover {
+				text-decoration: underline;
+			}
+			a:active {
+				color: red;
+			}
+
+			.footer {
+				color: #666;
+				background-color: #ccc;
+				padding: 15px 0;
+				text-align: center;
+				font-size: 14px;
+			}
+			/*
+        重置a的color
+      */
+			.footer a {
+				color: initial;
+				text-decoration: underline;
+			}
+		</style>
+	</body>
+</html>
