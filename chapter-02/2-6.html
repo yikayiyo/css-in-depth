@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>响应式panel</title>
+	</head>
+	<body>
+		<div class="panel">
+			<h2>Single-origin</h2>
+			<div class="panel-body">
+				We have built partnerships with small farms around the world to
+				hand-select beans at the peak of season. We then carefully roast in
+				<a href="/batch-size">small batches</a> to maximize their potential.
+			</div>
+		</div>
+		<blockquote>
+			这里利用<i>media queries</i
+			>给不同大小的屏幕设置不同的基础字号，panel的<code>font-size: 1em;</code
+			>是相对值，面板的padding、
+			border-radius也是相对值。因此随着屏幕大小的变化，panel会有不同的样式。
+			而且这里起作用的css代码只有一行，即:root中设置font-size的那一行。
+		</blockquote>
+	</body>
+	<style>
+		:root {
+			font-size: 0.75em;
+		}
+
+		@media (min-width: 800px) {
+			:root {
+				font-size: 0.875em;
+			}
+		}
+
+		@media (min-width: 1200px) {
+			:root {
+				font-size: 1em;
+			}
+		}
+
+		.panel {
+			padding: 1em;
+			border-radius: 0.5em;
+			border: 1px solid #999;
+		}
+		.panel > h2 {
+			margin-top: 0;
+			font-size: 0.8rem;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		blockquote {
+			background-color: #dfa;
+			width: 375px;
+		}
+		code {
+			padding: 0.1em;
+			border-radius: 0.1em;
+			background-color: rgba(211, 211, 211, 0.322);
+		}
+	</style>
+</html>
