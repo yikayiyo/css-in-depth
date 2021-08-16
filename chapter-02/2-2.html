@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>em设置字体大小</title>
+	</head>
+	<body>
+		<p>We love coffee</p>
+		<p class="slogan">We love coffee</p>
+		<blockquote>
+			.slogan设置字体大小为1.2em，因为其继承的字体大小为body指定的16px，所以最终计算值为19.2px。
+		</blockquote>
+	</body>
+	<style>
+		body {
+			font-size: 16px;
+		}
+		.slogan {
+			font-size: 1.2em;
+		}
+		blockquote {
+			background-color: #dfa;
+			width: 375px;
+		}
+	</style>
+</html>

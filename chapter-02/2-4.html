@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<ul>
+			<li>
+				Top level
+				<ul>
+					<li>
+						Second level
+						<ul>
+							<li>
+								Third level
+								<ul>
+									<li>
+										Fourth level
+										<ul>
+											<li>Fifth level</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<blockquote>
+			给ul设置font-size为.8em，嵌套的ul中的字体会越来越小。
+			同样，如果设置为1.2em，字体会越来越大。
+		</blockquote>
+	</body>
+	<style>
+		body {
+			font-size: 20px;
+		}
+		ul {
+			font-size: 1.2em;
+		}
+		blockquote {
+			background-color: #dfa;
+			width: 375px;
+		}
+	</style>
+</html>

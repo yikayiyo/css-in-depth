@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<ul>
+			<li>
+				Top level
+				<ul>
+					<li>
+						Second level
+						<ul>
+							<li>
+								Third level
+								<ul>
+									<li>
+										Fourth level
+										<ul>
+											<li>Fifth level</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<blockquote>
+			如何取消2-4中的缩放？
+			一个方法是，添加额外的规则，对于嵌套的ul，设置其字体大小为1em，即内部的ul不再缩放；
+		</blockquote>
+		<blockquote>
+			另一个方法是，利用rem指定一个固定的参考值，如：设置ul中的font-size为0.8rem，这样不管在哪一层，
+			计算值都是相同的。
+		</blockquote>
+		<blockquote>rem ——> root em。</blockquote>
+		<blockquote>
+			:root伪类选择器和html标签选择器都可以表示DOM的根节点元素，但是两者的特异性不相等。
+		</blockquote>
+		<blockquote>
+			Tips: 设置字体大小用rems，设置边框用px，其它大多数属性都可以用em。
+		</blockquote>
+	</body>
+	<style>
+		:root {
+			font-size: 1em;
+		}
+		ul {
+			font-size: 0.8rem;
+		}
+		/* ul ul {
+			font-size: 1em;
+		} */
+		blockquote {
+			background-color: #dfa;
+			width: 375px;
+		}
+	</style>
+</html>

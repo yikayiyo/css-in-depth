@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>相对单位em设置padding和border-radius</title>
+	</head>
+	<body>
+		<div class="container">
+			<span class="box box-small">Small</span>
+			<span class="box box-large">Large</span>
+		</div>
+		<blockquote>
+			利用em设置padding和border-radius，只要改变当前元素的字体大小，这两个属性也会相应地改变。
+		</blockquote>
+	</body>
+	<style>
+		.container {
+			width: 80%;
+			margin: 10rem auto;
+		}
+		.box {
+			padding: 1em;
+			border-radius: 1em;
+			background-color: lightgray;
+		}
+		.box-small {
+			font-size: 12px;
+		}
+		.box-larget {
+			font-size: 18px;
+		}
+		blockquote {
+			background-color: #dfa;
+			width: 375px;
+		}
+	</style>
+</html>

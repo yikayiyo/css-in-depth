@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>相同的em设置font-size和padding</title>
+	</head>
+	<body>
+		<p>We love coffee</p>
+		<p class="slogan">We love coffee</p>
+		<blockquote>
+			.slogan的字体大小和padding都设置为1.2em，但是最终的计算值是不同的。
+			原因是，计算顺序不同。浏览器会首先计算当前元素的字体大小，16*1.2=19.2px，再根据当前字体大小计算
+			padding，19.2*1.2=23.04px。
+		</blockquote>
+	</body>
+	<style>
+		body {
+			font-size: 16px;
+		}
+		.slogan {
+			font-size: 1.2em;
+			padding: 1.2em;
+			background-color: lavender;
+		}
+		blockquote {
+			background-color: #dfa;
+			width: 375px;
+		}
+	</style>
+</html>
