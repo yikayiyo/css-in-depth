@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>修改自定义属性</title>
+	</head>
+	<body>
+		<div class="panel">
+			<h2>Single-origin</h2>
+			<div class="panel-body">
+				We have built partnerships with small farms around the world to
+				hand-select beans at the peak of season. We then carefully roast in
+				small batches to maximize their potential.
+			</div>
+		</div>
+		<aside class="dark">
+			<div class="panel">
+				<h2>Single-origin</h2>
+				<div class="panel-body">
+					We have built partnerships with small farms around the world to
+					hand-select beans at the peak of season. We then carefully roast in
+					small batches to maximize their potential.
+				</div>
+			</div>
+		</aside>
+		<button id="toggle-bg-color-btn">点击切换panel背景色</button>
+		<blockquote>
+			自定义属性的表现像是有自己作用域的变量，因为后代元素会继承它的值。
+			为了得到第二个panel，只是在.dark中重新定义了两个自定义属性的值，
+			没有添加新的类，也没有重写panel的样式。
+		</blockquote>
+
+		<blockquote>
+			也可以借助JavaScript修改自定义属性。这里添加了一个按钮，点击事件的回调函数表示：
+			尝试删除rootElement中的‘--main-bg’属性，如果没有这个属性，删除失败，给panel添加该属性，改变panel背景色；
+			如果有这个属性，就把它删除，panel恢复原来的颜色。可以在控制台，观察点击按钮时，html标签的<code>element.style</code>。
+		</blockquote>
+	</body>
+	<style>
+		:root {
+			--main-bg: #fff;
+			--main-color: #000;
+		}
+		.panel {
+			font-size: 1rem;
+			padding: 1em;
+			border: 1px solid #999;
+			border-radius: 0.5em;
+			background-color: var(--main-bg);
+			color: black;
+			color: var(--main-color);
+		}
+		.panel > h2 {
+			margin-top: 0;
+			font-size: 0.8em;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		.dark {
+			margin-top: 2em;
+			padding: 1em;
+			background-color: #999;
+			--main-bg: #333;
+			--main-color: #fff;
+		}
+		button {
+			margin-top: 2em;
+		}
+		blockquote {
+			background-color: #dfa;
+			width: 375px;
+		}
+		code {
+			padding: 0.1em;
+			border-radius: 0.1em;
+			background-color: rgba(211, 211, 211, 0.322);
+		}
+	</style>
+	<script type="text/javascript">
+		const btn = document.getElementById("toggle-bg-color-btn");
+		var rootElement = document.documentElement;
+
+		btn.addEventListener("click", () => {
+			if (!rootElement.style.removeProperty("--main-bg")) {
+				console.log("删除失败");
+				rootElement.style.setProperty("--main-bg", "#cdf");
+			}
+		});
+	</script>
+</html>

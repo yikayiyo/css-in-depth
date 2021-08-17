@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>自定义属性</title>
+	</head>
+	<body>
+		<p class="about-us">
+			We have built partnerships with small farms around the world to
+			hand-select beans at the peak of season. We then carefully roast in small
+			batches to maximize their potential.
+		</p>
+		<blockquote>
+			在:root中设置自定义属性，其名必须以<code>--</code>开头。
+			然后利用<code>var</code>调用。 使用var时可以设置一个备选值，例如：<code
+				>font-weight: var(--brand-weight, 700)</code
+			>，这里<code>--brand-weight</code>没有定义，因此字体权重会被设置为700。
+			如果var返回的结果非法，该属性会被设置为它的默认值，这里p的<code
+				>padding: var(--brand-color);</code
+			>是个非法值，因此padding最后被设置为0。
+		</blockquote>
+	</body>
+
+	<style>
+		:root {
+			--main-font: Helvetica, Arial, sans-serif;
+			--brand-color: #369;
+		}
+
+		p {
+			font-family: var(--main-font);
+			color: var(--brand-color);
+			font-weight: var(--brand-weight, 700);
+			padding: var(--brand-color);
+		}
+
+		blockquote {
+			background-color: #dfa;
+		}
+
+		code {
+			padding: 0.1em;
+			border-radius: 0.1em;
+			background-color: rgba(211, 211, 211, 0.322);
+		}
+	</style>
+</html>
