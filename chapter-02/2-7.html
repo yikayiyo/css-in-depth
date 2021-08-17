@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>panel缩放</title>
+	</head>
+	<body>
+		<div class="panel">
+			<h2>Single-origin</h2>
+			<div class="panel-body">
+				We have built partnerships with small farms around the world to
+				hand-select beans at the peak of season. We then carefully roast in
+				<a href="/batch-size">small batches</a> to maximize their potential.
+			</div>
+		</div>
+		<div class="panel large">
+			<h2>Single-origin</h2>
+			<div class="panel-body">
+				We have built partnerships with small farms around the world to
+				hand-select beans at the peak of season. We then carefully roast in
+				<a href="/batch-size">small batches</a> to maximize their potential.
+			</div>
+		</div>
+		<div class="panel smaller">
+			<h2>Single-origin</h2>
+			<div class="panel-body">
+				We have built partnerships with small farms around the world to
+				hand-select beans at the peak of season. We then carefully roast in
+				<a href="/batch-size">small batches</a> to maximize their potential.
+			</div>
+		</div>
+		<blockquote>
+			首先在panel中利用rem设置一个可预测的基础字号，<code>font-size: 1rem;</code
+			>。然后使用em设置h2的字号，<code>font-size: 0.8em;</code
+			>，这样它就会随着父元素的字号改变而变化。
+			要想得到一个更大的panel，只需要修改它的基础字号，
+			<code>font-size: 1.5rem;</code>。同理也可以得到更小的。
+		</blockquote>
+	</body>
+	<style>
+		.panel {
+			font-size: 1rem;
+			padding: 1em;
+			border-radius: 0.5em;
+			border: 1px solid #999;
+		}
+		.panel > h2 {
+			margin-top: 0;
+			font-size: 0.8em;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		.panel.large {
+			font-size: 1.5rem;
+		}
+		.panel.smaller {
+			font-size: 0.8rem;
+		}
+		blockquote {
+			background-color: #dfa;
+			width: 375px;
+		}
+		code {
+			padding: 0.1em;
+			border-radius: 0.1em;
+			background-color: rgba(211, 211, 211, 0.322);
+		}
+	</style>
+</html>

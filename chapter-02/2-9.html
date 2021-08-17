@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>使用vw设置字号</title>
+	</head>
+	<body>
+		<blockquote>
+			<code>font-size: calc(0.5em+1vw);</code>
+			使得字号大小和屏幕尺寸有关，并且在小屏幕上又不至于太小。
+			而且这里没有使用<em>media query</em>设置断点，字体的变化很柔和。
+		</blockquote>
+	</body>
+	<style>
+		:root {
+			font-size: calc(0.5em + 1vw);
+		}
+
+		blockquote {
+			background-color: #dfa;
+		}
+		code {
+			padding: 0.1em;
+			border-radius: 0.1em;
+			background-color: rgba(211, 211, 211, 0.322);
+		}
+	</style>
+</html>

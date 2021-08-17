@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>line-height</title>
+	</head>
+	<body>
+		<p class="about-us">
+			We have built partnerships with small farms around the world to
+			hand-select beans at the peak of season. We then carefully roast in small
+			batches to maximize their potential.
+		</p>
+		<blockquote>
+			在body中设置的<code>line-height: 1.2;</code>会被后代节点继承。
+			给p.about-us设置字号<code>font-size: 2em;</code
+			>后，line-height的计算值就是1.2倍的字号，即1.2*2*16=38.4px。
+		</blockquote>
+		<blockquote>
+			如果设置line-height时给了单位？<br />修改为<code>line-height: 1.2em;</code
+			>后，行高1.2*16=19.2px会被后代节点继承。 给p.about-us设置字号<code
+				>font-size: 2em;</code
+			>后，出现了字体重叠现象。
+		</blockquote>
+	</body>
+
+	<style>
+		body {
+			line-height: 1.2;
+			line-height: 1.2em;
+		}
+		p.about-us {
+			font-size: 2em;
+		}
+		blockquote {
+			background-color: #dfa;
+		}
+		code {
+			padding: 0.1em;
+			border-radius: 0.1em;
+			background-color: rgba(211, 211, 211, 0.322);
+		}
+	</style>
+</html>
