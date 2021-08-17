@@ -33,8 +33,7 @@
 		</blockquote>
 
 		<blockquote>
-			也可以借助JavaScript修改自定义属性。这里添加了一个按钮，点击事件的回调函数表示：
-			尝试删除rootElement中的‘--main-bg’属性，如果没有这个属性，删除失败，给panel添加该属性，改变panel背景色；
+			也可以借助JavaScript修改自定义属性。这里添加了一个按钮，它的点击事件的回调函数将尝试删除rootElement中的‘--main-bg’属性，如果没有这个属性，删除失败，给panel添加该属性，改变panel背景色；
 			如果有这个属性，就把它删除，panel恢复原来的颜色。可以在控制台，观察点击按钮时，html标签的<code>element.style</code>。
 		</blockquote>
 	</body>
@@ -81,7 +80,7 @@
 	<script type="text/javascript">
 		const btn = document.getElementById("toggle-bg-color-btn");
 		var rootElement = document.documentElement;
-
+		/* 这个地方的逻辑挺有意思的 */
 		btn.addEventListener("click", () => {
 			if (!rootElement.style.removeProperty("--main-bg")) {
 				console.log("删除失败");
