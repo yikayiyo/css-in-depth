@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>实现等高列——table</title>
+		<style>
+			:root {
+				box-sizing: border-box;
+			}
+
+			*,
+			::before,
+			::after {
+				box-sizing: inherit;
+			}
+
+			.third-party-component-container {
+				box-sizing: content-box;
+			}
+
+			body {
+				background-color: #eee;
+				font-family: Helvetica, Arial, sans-serif;
+			}
+
+			header {
+				color: #fff;
+				background-color: #0072b0;
+				border-radius: 0.5em;
+			}
+
+			.wrapper {
+				margin-left: -1.5em;
+				margin-right: -1.5em;
+			}
+
+			.container {
+				display: table;
+				width: 100%; /* 宽度需要显式指定 */
+				border-spacing: 1.5em 0; /* 只设置了水平方向的间隔 */
+			}
+
+			.main {
+				display: table-cell;
+				width: 70%;
+				background-color: #fff;
+				border-radius: 0.5em;
+			}
+
+			.sidebar {
+				display: table-cell;
+				width: 30%;
+				/* margin-left: 1em;  // 失效 */
+				padding: 1.5em;
+				background-color: #fff;
+				border-radius: 0.5em;
+			}
+
+			blockquote {
+				position: absolute;
+				bottom: 0;
+				background-color: #dfa;
+			}
+
+			code {
+				padding: 0.1em;
+				border-radius: 0.1em;
+				background-color: rgba(211, 211, 211, 0.322);
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Franklin Running Club</h1>
+		</header>
+		<div class="wrapper">
+			<div class="container">
+				<main class="main">
+					<h2>Come join us!</h2>
+					<p>
+						The Franklin Running club meets at 6:00pm every Thursday at the town
+						square. Runs are three to five miles, at your own pace.
+					</p>
+				</main>
+				<aside class="sidebar">
+					<div class="widget"></div>
+					<div class="widget"></div>
+				</aside>
+			</div>
+		</div>
+
+		<blockquote>
+			给元素设置固定高度的问题在于：<br />
+			- 如果高度太大，会留下太多空白 <br />
+			- 如果高度太小，又会有内容溢出 <br />
+			因此最好的方式是，让内容决定其高度。<br />
+			实现等高列时，各个列的内容决定各自的高度，然后高度较低的列向较高的列看齐。<br />
+			这里给container，mian和aside都设置了display属性，为了给两个列添加间隔，可以利用border-spacing属性。<br />
+			给container添加完border-spacing属性后，table的外边缘也出现了间隔。<br />
+			消除方法：<br />
+			巧妙利用负外边距。(这里在.container外面又包裹了一个.wrapper容器）
+			你可以在控制台调整.wrapper中margin-left、margin-right的大小，观察.wrapper内容区宽度的变化！
+		</blockquote>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>小心溢出</title>
+		<style>
+			p {
+				border: 1px solid #000;
+				height: 100px;
+				width: 20%;
+				float: left;
+				margin-left: 1em;
+			}
+			.p-visible {
+				overflow: visible;
+			}
+
+			.p-hidden {
+				overflow: hidden;
+			}
+
+			.p-scroll {
+				overflow: scroll;
+			}
+
+			.p-auto {
+				overflow: auto;
+			}
+
+			blockquote {
+				position: absolute;
+				bottom: 0;
+				background-color: #dfa;
+			}
+
+			code {
+				padding: 0.1em;
+				border-radius: 0.1em;
+				background-color: rgba(211, 211, 211, 0.322);
+			}
+		</style>
+	</head>
+	<body>
+		<p class="p-visible">
+			We'll be running the Polar Bear 5k together on December 14th. Meet us at
+			the town square at 7:00am to carpool. Wear blue!
+		</p>
+		<p class="p-hidden">
+			We'll be running the Polar Bear 5k together on December 14th. Meet us at
+			the town square at 7:00am to carpool. Wear blue!
+		</p>
+		<p class="p-scroll">
+			We'll be running the Polar Bear 5k together on December 14th. Meet us at
+			the town square at 7:00am to carpool. Wear blue!
+		</p>
+		<p class="p-auto">
+			We'll be running the Polar Bear 5k together on December 14th. Meet us at
+			the town square at 7:00am to carpool. Wear blue!
+		</p>
+		<blockquote>
+			上面的四个p都设置了特定的高度值，因此可能出现内容溢出的现象。<br />
+			可以通过overflow属性，控制溢出内容的显示方式。<br />
+			不推荐给元素设置高度。<br />
+			文档流的工作方式是宽度受限，高度无限。<br />
+			元素的高度应该由内容撑起，而不是由容器决定。
+		</blockquote>
+	</body>
+</html>
