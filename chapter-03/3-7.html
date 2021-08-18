@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>垂直居中</title>
+		<style>
+			:root {
+				box-sizing: border-box;
+			}
+
+			*,
+			::before,
+			::after {
+				box-sizing: inherit;
+			}
+
+			.third-party-component-container {
+				box-sizing: content-box;
+			}
+
+			body {
+				background-color: #eee;
+				font-family: Helvetica, Arial, sans-serif;
+			}
+
+			header {
+				color: #fff;
+				background-color: #0072b0;
+				border-radius: 0.5em;
+				padding: 5em 0;
+			}
+
+			.container {
+				display: flex;
+			}
+
+			.main {
+				width: 70%;
+				background-color: #fff;
+				border-radius: 0.5em;
+			}
+
+			.sidebar {
+				width: 30%;
+				margin-left: 1em;
+				padding: 1.5em;
+				background-color: #fff;
+				border-radius: 0.5em;
+			}
+
+			blockquote {
+				position: absolute;
+				bottom: 0;
+				background-color: #dfa;
+			}
+
+			code {
+				padding: 0.1em;
+				border-radius: 0.1em;
+				background-color: rgba(211, 211, 211, 0.322);
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Franklin Running Club</h1>
+		</header>
+		<div class="container">
+			<main class="main">
+				<h2>Come join us!</h2>
+				<p>
+					The Franklin Running club meets at 6:00pm every Thursday at the town
+					square. Runs are three to five miles, at your own pace.
+				</p>
+			</main>
+			<aside class="sidebar">
+				<div class="widget"></div>
+				<div class="widget"></div>
+			</aside>
+		</div>
+
+		<blockquote>
+			垂直居中方法：<br />
+			1.
+			没指定容器高度，给容器添加相等的上下内边距，容器里的内容就会垂直居中；<br />
+			2. 指定了容器高度，在容器中应用css代码<code>display: table-cell</code
+			>和<code>vertical-align: middle</code>；<br />
+			3. 借助flexbox； <br />
+			4. 借助gridbox； <br />
+			5.
+			如果内部元素是单行文本，可以令行高<code>line-height</code>等于容器高度,来使得内容居中；<br />
+			6. 如果容器和内部元素的高度都已知，可以利用绝对定位将其居中；<br />
+			7. 如果内部元素的高度都未知，可以利用绝对定位+位移将其居中。<br />
+		</blockquote>
+	</body>
+</html>

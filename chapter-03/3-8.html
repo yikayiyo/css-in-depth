@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>负外边距</title>
+	</head>
+	<style>
+		.outer {
+			width: 300px;
+			height: 300px;
+			margin: 0 auto;
+			background-color: lavenderblush;
+		}
+		.inner {
+			height: 60%;
+			padding-left: 20px;
+			margin-left: -10px;
+			background-color: lightblue;
+			background-clip: content-box;
+		}
+		blockquote {
+			position: absolute;
+			bottom: 0;
+			background-color: #dfa;
+		}
+
+		code {
+			padding: 0.1em;
+			border-radius: 0.1em;
+			background-color: rgba(211, 211, 211, 0.322);
+		}
+	</style>
+	<body>
+		<div class="outer">
+			<div class="inner"></div>
+		</div>
+		<blockquote>
+			调整inner参数<code>margin-left</code>的值，观察inner的width是如何变化的。<br />
+			原理：<br />
+			因为inner没有指定width，因此有如下的式子：<br />
+			<code
+				>margin-left + padding-left + width + padding-right + margin-right =
+				outter's width</code
+			>。在outter's
+			width固定不变的情况下，padding-left变大，width就会减小；margin-left减小，width就会变大。<br />
+			表现出来就是inner的拉伸。
+		</blockquote>
+	</body>
+</html>
