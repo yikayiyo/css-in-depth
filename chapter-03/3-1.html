@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>盒模型——content-box</title>
+	</head>
+	<body>
+		<header>
+			<h1>Franklin Running Club</h1>
+		</header>
+		<div class="container">
+			<main class="main">
+				<h2>Come join us!</h2>
+				<p>
+					The Franklin Running club meets at 6:00pm every Thursday at the town
+					square. Runs are three to five miles, at your own pace.
+				</p>
+			</main>
+			<aside class="sidebar">
+				<div class="widget"></div>
+				<div class="widget"></div>
+			</aside>
+		</div>
+		<blockquote>
+			main元素和aside元素都向左浮动，宽度分别设置为70%和30%，但是它们没有出现在一行！<br />
+			原因是：默认的盒模型是<code>content-box</code>，宽度设置只包含内容区，而aside内部设置的<code
+				>padding: 1.5em</code
+			>让aside的宽度实际上等于<em>30%+3em</em>，两者宽度和超过了100%。<br />
+			解决该问题的一个简单方法是：设置aside的宽度等于<code>calc(30%-3em)</code>，但是这个方法太丑陋。
+		</blockquote>
+	</body>
+	<style>
+		body {
+			background-color: #eee;
+			font-family: Helvetica, Arial, sans-serif;
+		}
+
+		header {
+			color: #fff;
+			background-color: #0072b0;
+			border-radius: 0.5em;
+		}
+
+		main {
+			display: block;
+		}
+
+		.main {
+			float: left;
+			width: 70%;
+			background-color: #fff;
+			border-radius: 0.5em;
+		}
+
+		.sidebar {
+			float: left;
+			width: 30%;
+			/* width: calc(30% - 3em); */
+			padding: 1.5em;
+			background-color: #fff;
+			border-radius: 0.5em;
+		}
+
+		blockquote {
+			position: absolute;
+			bottom: 0;
+			background-color: #dfa;
+		}
+
+		code {
+			padding: 0.1em;
+			border-radius: 0.1em;
+			background-color: rgba(211, 211, 211, 0.322);
+		}
+	</style>
+</html>

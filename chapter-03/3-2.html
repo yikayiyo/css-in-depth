@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>盒模型——border-box</title>
+	</head>
+	<body>
+		<header>
+			<h1>Franklin Running Club</h1>
+		</header>
+		<div class="container">
+			<main class="main">
+				<h2>Come join us!</h2>
+				<p>
+					The Franklin Running club meets at 6:00pm every Thursday at the town
+					square. Runs are three to five miles, at your own pace.
+				</p>
+			</main>
+			<aside class="sidebar">
+				<div class="widget"></div>
+				<div class="widget"></div>
+			</aside>
+		</div>
+		<blockquote>
+			这里添加了一个通用设置border-box的代码，以及针对第三方组件库样式可能的破坏的修复代码。（见style标签的代码及注释）<br />
+			不足的地方：两个列之间没有一点间隔，该怎么添加呢？
+		</blockquote>
+	</body>
+	<style>
+		/* 通用设置 */
+		:root {
+			box-sizing: border-box;
+		}
+
+		*,
+		::before,
+		::after {
+			box-sizing: inherit;
+		}
+
+		/* 如果第三方组件库的CSS使用的是content-box，
+    只需要在其顶层容器重新设置就可以避免通用设置的影响 */
+		.third-party-component-container {
+			box-sizing: content-box;
+		}
+
+		body {
+			background-color: #eee;
+			font-family: Helvetica, Arial, sans-serif;
+		}
+
+		header {
+			color: #fff;
+			background-color: #0072b0;
+			border-radius: 0.5em;
+		}
+
+		main {
+			display: block;
+		}
+
+		.main {
+			float: left;
+			width: 70%;
+			background-color: #fff;
+			border-radius: 0.5em;
+		}
+
+		.sidebar {
+			float: left;
+			width: 30%;
+			padding: 1.5em;
+			background-color: #fff;
+			border-radius: 0.5em;
+		}
+
+		blockquote {
+			position: absolute;
+			bottom: 0;
+			background-color: #dfa;
+		}
+
+		code {
+			padding: 0.1em;
+			border-radius: 0.1em;
+			background-color: rgba(211, 211, 211, 0.322);
+		}
+	</style>
+</html>
