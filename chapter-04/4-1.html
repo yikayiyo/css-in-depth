@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>利用float实现布局</title>
+		<style>
+			:root {
+				box-sizing: border-box;
+			}
+			*,
+			::before,
+			::after {
+				box-sizing: inherit;
+			}
+			body {
+				background-color: #eee;
+				font-family: Helvetica, Arial, sans-serif;
+			}
+			body * + * {
+				margin-top: 1.5em;
+			}
+			.container {
+				max-width: 1080px;
+				margin: 0 auto;
+			}
+			header {
+				padding: 1em 1.5em;
+				color: #fff;
+				background-color: #0072b0;
+				border-radius: 0.5em;
+				margin-bottom: 1.5em;
+			}
+			.main {
+				padding: 0 1.5em;
+				background-color: #fff;
+				border-radius: 0.5em;
+			}
+
+			.main::before {
+				content: " ";
+				display: block;
+			}
+
+			.clearfix::before,
+			.clearfix::after {
+				display: table;
+				content: " ";
+			}
+
+			.clearfix::after {
+				clear: both;
+			}
+
+			.media {
+				float: left;
+				margin: 0 1.5em 1.5em 0;
+				width: calc(50% - 1.5em);
+				padding: 1.5em;
+				background-color: #eee;
+				border-radius: 0.5em;
+			}
+
+			.media:nth-child(odd) {
+				clear: left;
+			}
+
+			blockquote {
+				position: absolute;
+				right: 0;
+				background-color: #dfa;
+				width: 200px;
+			}
+
+			code {
+				padding: 0.1em;
+				border-radius: 0.1em;
+				background-color: rgba(211, 211, 211, 0.322);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>Franklin Running Club</h1>
+			</header>
+			<main class="main clearfix">
+				<h2>Running tips</h2>
+				<div>
+					<div class="media">
+						<img class="media-image" src="runner.png" />
+						<div class="media-body">
+							<h4>Strength</h4>
+							<p>
+								Strength training is an important part of injury prevention.
+								Focus on your core&mdash; especially your abs and glutes.
+							</p>
+						</div>
+					</div>
+					<div class="media">
+						<img class="media-image" src="shoes.png" />
+						<div class="media-body">
+							<h4>Cadence</h4>
+							<p>
+								Check your stride turnover. The most efficient runners take
+								about 180 steps per minute.
+							</p>
+						</div>
+					</div>
+					<div class="media">
+						<img class="media-image" src="shoes.png" />
+						<div class="media-body">
+							<h4>Change it up</h4>
+							<p>
+								Don't run the same every time you hit the road. Vary your pace,
+								and vary the distance of your runs.
+							</p>
+						</div>
+					</div>
+					<div class="media">
+						<img class="media-image" src="runner.png" />
+						<div class="media-body">
+							<h4>Focus on form</h4>
+							<p>
+								Run tall but relaxed. Your feet should hit the ground beneath
+								your hips, not out in front of you.
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- <div style="clear: both"></div> 包含浮动的一种不优雅的方法-->
+			</main>
+			<blockquote>
+				给.media元素添加float属性，并且设置其宽度为50%后，没有出现期望的两行两列，而且白色背景缩小到了只包含h2标签。<br />
+				原因是，设置浮动后，media元素被拉出文档流，main中就只剩一个h2元素了。<br />
+				.clearfix做了什么：<br />
+				利用::after在main容器末尾添加伪元素来清除浮动。<br />
+				利用table解决外边距折叠问题。 <br />
+				<p style="background-color: thistle">
+					试着删除main元素的clearfix类，观察布局变化！
+				</p>
+				<p style="background-color: thistle">
+					.media:nth-child(odd)部分的作用是清除上面的浮动，试着删除这部分代码！
+				</p>
+				<p style="background-color: thistle">
+					怎么给media元素添加间隔、清除全局设置的垂直方向上的margin。
+				</p>
+			</blockquote>
+		</div>
+	</body>
+</html>
