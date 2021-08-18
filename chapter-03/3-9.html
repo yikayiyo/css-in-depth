@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>外边距折叠</title>
+		<style>
+			:root {
+				box-sizing: border-box;
+			}
+
+			*,
+			::before,
+			::after {
+				box-sizing: inherit;
+			}
+
+			.third-party-component-container {
+				box-sizing: content-box;
+			}
+
+			body {
+				background-color: #eee;
+				font-family: Helvetica, Arial, sans-serif;
+			}
+
+			header {
+				color: #fff;
+				background-color: #0072b0;
+				border-radius: 0.5em;
+				/* overflow: auto; */
+				/* padding: 1em 1.5em; */
+				/* border: 1px solid transparent; */
+			}
+
+			.container {
+				display: flex;
+			}
+
+			.main {
+				width: 70%;
+				background-color: #fff;
+				border-radius: 0.5em;
+			}
+
+			.sidebar {
+				width: 30%;
+				margin-left: 1em;
+				padding: 1.5em;
+				background-color: #fff;
+				border-radius: 0.5em;
+			}
+
+			blockquote {
+				position: absolute;
+				bottom: 0;
+				background-color: #dfa;
+			}
+
+			code {
+				padding: 0.1em;
+				border-radius: 0.1em;
+				background-color: rgba(211, 211, 211, 0.322);
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Franklin Running Club</h1>
+		</header>
+		<div class="container">
+			<main class="main">
+				<h2>Come join us!</h2>
+				<p>
+					The Franklin Running club meets at 6:00pm every Thursday at the town
+					square. Runs are three to five miles, at your own pace.
+				</p>
+			</main>
+			<aside class="sidebar">
+				<div class="widget"></div>
+				<div class="widget"></div>
+			</aside>
+		</div>
+
+		<blockquote>
+			外边距折叠只发生在垂直方向。<br />
+			注意：<br />
+			header中的h1的外边距和包裹它的div是如何折叠的？<br />
+			main中h2和p的外边距是如何折叠的？<br />
+			为什么container中h2的外边距没有和上面header中h1的外边距折叠？<br />
+			如何消除外边距折叠？<br />
+			header的样式代码注释中有三种方式；如果容器外的元素被设置为float、inline-block、absolute
+			or fixed
+			positioning，也不会发生折叠；此外还可以利用flexbox、gridbox、table-cell等。
+		</blockquote>
+	</body>
+</html>
