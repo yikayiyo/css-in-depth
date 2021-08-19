@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>利用float实现布局</title>
+		<title>媒体对象模式和BFC</title>
 		<style>
 			:root {
 				box-sizing: border-box;
@@ -64,6 +64,20 @@
 
 			.media:nth-child(odd) {
 				clear: left;
+			}
+
+			.media-image {
+				float: left;
+				margin-right: 1.5em;
+			}
+
+			.media-body {
+				overflow: auto;
+				margin-top: 0;
+			}
+
+			.media-body h4 {
+				margin-top: 0;
 			}
 
 			blockquote {
@@ -129,26 +143,13 @@
 						</div>
 					</div>
 				</div>
-				<!-- <div style="clear: both"></div> 包含浮动的一种不优雅的方法-->
 			</main>
 			<blockquote>
-				给.media元素添加float属性，并且设置其宽度为50%后，没有出现期望的两行两列，而且白色背景缩小到了只包含h2标签。<br />
-				原因是，设置浮动后，media元素被拉出文档流，main中就只剩一个h2元素了。<br />
-				.clearfix做了什么：<br />
-				利用::after在main容器末尾添加伪元素来清除浮动。<br />
-				利用<code>display:table;</code>解决外边距折叠问题。
+				媒体对象模式：左边图片，右边描述。<br />
+				这里在.media-body中利用<code>overflow: auto</code
+				>创建了BFC，描述文字不再环绕图片。 删除这行代码看看会发生什么。
 				<p style="background-color: thistle">
-					试着换成<code>display:table-cell;</code>，哪里会受影响？
-				</p>
-				<br />
-				<p style="background-color: thistle">
-					试着删除main元素的clearfix类，观察布局变化！
-				</p>
-				<p style="background-color: thistle">
-					.media:nth-child(odd)部分的作用是清除上面的浮动，试着删除这部分代码！
-				</p>
-				<p style="background-color: thistle">
-					怎么给media元素添加间隔、清除全局设置的垂直方向上的margin。
+					todo：搜索BFC的作用、其它创建方式、其它方式的局限性。
 				</p>
 			</blockquote>
 		</div>
