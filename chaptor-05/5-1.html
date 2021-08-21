@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Flexbox样例</title>
+		<link rel="stylesheet" href="5-1.css" />
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>Ink</h1>
+			</header>
+			<nav>
+				<ul class="site-nav">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Features</a></li>
+					<li><a href="#">Pricing</a></li>
+					<li><a href="#">Support</a></li>
+					<li class="nav-right"><a href="/about">About</a></li>
+				</ul>
+			</nav>
+			<main class="flex">
+				<div class="column-main tile">
+					<h1>Team collaboration done right</h1>
+					<p>
+						Thousands of teams from all over the world turn to <b>Ink</b> to
+						communicate and get things done.
+					</p>
+					<h1>Team collaboration done right</h1>
+					<p>
+						Thousands of teams from all over the world turn to <b>Ink</b> to
+						communicate and get things done.
+					</p>
+					<h1>Team collaboration done right</h1>
+					<p>
+						Thousands of teams from all over the world turn to <b>Ink</b> to
+						communicate and get things done.
+					</p>
+					<h1>Team collaboration done right</h1>
+					<p>
+						Thousands of teams from all over the world turn to <b>Ink</b> to
+						communicate and get things done.
+					</p>
+				</div>
+				<div class="column-sidebar">
+					<div class="tile">
+						<form class="login-form">
+							<h3>Login</h3>
+							<p>
+								<label for="username">Username</label>
+								<input id="username" type="text" name="username" />
+							</p>
+							<p>
+								<label for="password">Password</label>
+								<input id="password" type="password" name="password" />
+							</p>
+							<button type="submit">Login</button>
+						</form>
+					</div>
+					<div class="tile centered">
+						<small>Starting at</small>
+						<div class="cost">
+							<span class="cost-currency">$</span>
+							<span class="cost-dollars">20</span>
+							<span class="cost-cents">.00</span>
+						</div>
+						<a class="cta-button" href="/pricing"> Sign up </a>
+					</div>
+				</div>
+			</main>
+		</div>
+		<blockquote>
+			两种设置flex的方式，区别在哪里？ <br />
+			1. <code>flex: 2;</code>, <code>flex: 1;</code> <br />
+			2. <code>flex: 66.67%;</code>, <code>flex: 33.33%;</code> <br />
+			<p style="background-color: thistle">
+				提示：<code>flex-basis: 0%</code>和padding
+			</p>
+			垂直方向的flex调整item高度的前提是，容器设置了固定高度。本例中，column-sidebar的高度是由外部容器main.flex确定的。
+		</blockquote>
+	</body>
+</html>
