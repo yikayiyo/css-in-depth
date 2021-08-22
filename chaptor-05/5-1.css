@@ -93,3 +93,25 @@ code {
 	border-radius: 0.1em;
 	background-color: rgba(211, 211, 211, 0.322);
 }
+
+.login-form h3 {
+	margin: 0;
+	font-size: 0.9em;
+	font-weight: bold;
+	text-align: right;
+	text-transform: uppercase;
+}
+
+.login-form input:not([type="checkbox"]):not([type="radio"]) {
+	display: block;
+	width: 100%;
+	margin-top: 0;
+}
+
+.login-form button {
+	margin-top: 1em;
+	border: 1px solid #cc6b5a;
+	background-color: white;
+	padding: 0.5em 1em;
+	cursor: pointer;
+}
