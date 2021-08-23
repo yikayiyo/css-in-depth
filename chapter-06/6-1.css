@@ -1,0 +1,33 @@
+:root {
+	box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+	box-sizing: inherit;
+}
+
+body {
+	background-color: #709b90;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+body * + * {
+	margin-top: 1.5em;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-gap: 0.5em;
+}
+
+.grid > * {
+	margin-top: 0;
+	background-color: darkgray;
+	color: white;
+	padding: 2em;
+	border-radius: 0.5em;
+}
