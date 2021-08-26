@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Grid命名语法: named grid areas</title>
+		<style>
+			.container {
+				display: grid;
+				grid-template-areas:
+					"top  top    right"
+					"left .      right"
+					"left bottom bottom";
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: repeat(3, auto);
+			}
+
+			.top {
+				height: 100px;
+				grid-area: top;
+				background-color: khaki;
+			}
+			.right {
+				height: calc(100vh - 100px);
+				grid-area: right;
+				background-color: lightblue;
+			}
+			.left {
+				height: calc(100vh - 100px);
+				grid-area: left;
+				background-color: lavender;
+			}
+			.bottom {
+				height: 100px;
+				grid-area: bottom;
+				background-color: lightgray;
+			}
+			blockquote {
+				position: absolute;
+				right: 45%;
+				top: 50%;
+				background-color: #dfa;
+				width: 200px;
+			}
+
+			code {
+				padding: 0.1em;
+				border-radius: 0.1em;
+				background-color: rgba(211, 211, 211, 0.322);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="top"></div>
+			<div class="right"></div>
+			<div class="left"></div>
+			<div class="bottom"></div>
+		</div>
+		<blockquote>留空：使用<code>.</code>作为grid cell的命名。</blockquote>
+	</body>
+</html>
