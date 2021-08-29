@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>A modal dialog box</title>
+		<title>Absolute positioning</title>
 		<style>
 			body {
 				font-family: Helvetica, Arial, sans-serif;
@@ -57,6 +57,10 @@
 				overflow: auto;
 			}
 			.modal-close {
+				position: absolute;
+				top: 0.3em;
+				right: 0.3em;
+				padding: 0.3em;
 				cursor: pointer;
 			}
 			.layer--underneath {
@@ -106,10 +110,7 @@
 				</form>
 			</div>
 		</div>
-		<blockquote>
-			fixed positioning<br />
-			注意modal代码的位置，它不在container里。<code>modal-backdrop</code>设置了一个暗色的透明背景。
-		</blockquote>
+		<blockquote>absolute positioning<br /></blockquote>
 	</body>
 	<script type="text/javascript">
 		var container = document.getElementById("container");
