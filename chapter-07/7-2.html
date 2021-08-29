@@ -62,7 +62,24 @@
 				right: 0.3em;
 				padding: 0.3em;
 				cursor: pointer;
+				font-size: 2em;
+				height: 1em;
+				width: 1em;
+				text-indent: 10em;
+				overflow: hidden;
+				border: 0;
 			}
+
+			/* 伪元素像是子元素；已定位的.modal-close是伪元素的包含块 */
+			.modal-close::after {
+				position: absolute;
+				line-height: 0.5;
+				top: 0.2em;
+				left: 0.1em;
+				text-indent: 0; /* reset inherited property */
+				content: "\00D7";
+			}
+
 			.layer--underneath {
 				-webkit-filter: blur(6px);
 				filter: blur(6px); /* 毛玻璃效果 */
@@ -110,7 +127,10 @@
 				</form>
 			</div>
 		</div>
-		<blockquote>absolute positioning<br /></blockquote>
+		<blockquote>
+			absolute positioning<br />
+			这里重新设计了关闭按钮的大小、样子和位置。
+		</blockquote>
 	</body>
 	<script type="text/javascript">
 		var container = document.getElementById("container");
