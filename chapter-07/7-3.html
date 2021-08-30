@@ -18,10 +18,20 @@
 			position: relative; /*创建包含块*/
 		}
 		.dropdown-label {
-			padding: 0.5em 1.5em;
+			padding: 0.5em 2em 0.5em 1.5em;
 			border: 1px solid #ccc;
 			background-color: #eee;
 		}
+		.dropdown-label::after {
+			content: "";
+			display: block;
+			position: absolute;
+			right: 1em;
+			top: 1em;
+			border: 0.3em solid;
+			border-color: black transparent transparent;
+		}
+
 		.dropdown-menu {
 			display: none; /*默认不显示*/
 			position: absolute;
@@ -33,6 +43,10 @@
 		.dropdown:hover .dropdown-menu {
 			/*hover state 给的是menu的container*/
 			display: block;
+		}
+		.dropdown:hover .dropdown-label::after {
+			top: 0.7em;
+			border-color: transparent transparent black;
 		}
 		.submenu {
 			padding-left: 0;
@@ -130,6 +144,15 @@
 	</style>
 	<body>
 		<div class="container">
+			<header class="top-banner">
+				<div class="top-banner-inner">
+					<p>
+						Find out what's going on at Wombat Coffee each month. Sign up for
+						our newsletter:
+						<button id="open">Sign up</button>
+					</p>
+				</div>
+			</header>
 			<nav>
 				<div class="dropdown">
 					<div class="dropdown-label">Main Menu</div>
@@ -145,15 +168,6 @@
 				</div>
 			</nav>
 			<h1>Wombat Coffee Roasters</h1>
-			<header class="top-banner">
-				<div class="top-banner-inner">
-					<p>
-						Find out what's going on at Wombat Coffee each month. Sign up for
-						our newsletter:
-						<button id="open">Sign up</button>
-					</p>
-				</div>
-			</header>
 		</div>
 		<div id="modal" class="modal">
 			<div class="modal-backdrop"></div>
@@ -173,19 +187,16 @@
 		<blockquote>:hover是加到了menu的container上的。</blockquote>
 	</body>
 	<script type="text/javascript">
-		var container = document.getElementById("container");
 		var button = document.getElementById("open");
 		var close = document.getElementById("close");
 		var modal = document.getElementById("modal");
 		button.addEventListener("click", function (event) {
 			event.preventDefault();
 			modal.style.display = "block";
-			container.classList.add("layer--underneath");
 		});
 		close.addEventListener("click", function (event) {
 			event.preventDefault();
 			modal.style.display = "none";
-			container.classList.remove("layer--underneath");
 		});
 	</script>
 </html>
