@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sticky positioning</title>
+		<style>
+			.container {
+				display: flex;
+				width: 80%;
+				max-width: 1000px;
+				margin: 1em auto;
+				min-height: 150vh;
+			}
+			.col-main {
+				flex: 80%;
+			}
+			.col-sidebar {
+				flex: 20%;
+			}
+			.affix {
+				position: sticky;
+				top: 1em;
+			}
+			blockquote {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				background-color: #dfa;
+				width: 200px;
+			}
+			code {
+				padding: 0.1em;
+				border-radius: 0.1em;
+				background-color: rgba(211, 211, 211, 0.322);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<main class="col-main">
+				<nav>
+					<div class="dropdown">
+						<div class="dropdown-label">Main Menu</div>
+						<div class="dropdown-menu">
+							<ul class="submenu">
+								<li><a href="/">Home</a></li>
+								<li><a href="/coffees">Coffees</a></li>
+								<li><a href="/brewers">Brewers</a></li>
+								<li><a href="/specials">Specials</a></li>
+								<li><a href="/about">About us</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+				<h1>Wombat Coffee Roasters</h1>
+			</main>
+			<aside class="col-sidebar">
+				<div class="affix">
+					<ul class="submenu">
+						<li><a href="/">Home</a></li>
+						<li><a href="/coffees">Coffees</a></li>
+						<li><a href="/brewers">Brewers</a></li>
+						<li><a href="/specials">Specials</a></li>
+						<li><a href="/about">About us</a></li>
+					</ul>
+				</div>
+			</aside>
+		</div>
+		<blockquote>
+			试着给.affix一个高度200vh，上下滚动屏幕观察现象。<br />
+			the parent must be taller than the sticky element in order for it to stick
+			into place
+		</blockquote>
+	</body>
+</html>
