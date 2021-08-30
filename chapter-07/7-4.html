@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>A stacking contexts example</title>
+		<style>
+			body {
+				margin: 40px;
+			}
+			.box {
+				display: inline-block;
+				width: 200px;
+				line-height: 200px;
+				text-align: center;
+				border: 2px solid black;
+				background-color: #ea5;
+				margin-left: -60px;
+				vertical-align: top;
+			}
+			.one {
+				margin-left: 0;
+			}
+			.two {
+				margin-top: 30px;
+			}
+			.three {
+				margin-top: 60px;
+			}
+			.positioned {
+				position: relative;
+				background-color: #5ae;
+				z-index: 1; /*创建一个堆叠上下文*/
+			}
+			.absolute {
+				position: absolute;
+				top: 1em;
+				right: 1em;
+				height: 2em;
+				background-color: #fff;
+				border: 2px dashed #888;
+				z-index: 100;
+				line-height: initial;
+				padding: 1em;
+			}
+			blockquote {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				background-color: #dfa;
+				width: 200px;
+			}
+			code {
+				padding: 0.1em;
+				border-radius: 0.1em;
+				background-color: rgba(211, 211, 211, 0.322);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box one positioned">
+			one
+			<div class="absolute">nested</div>
+		</div>
+		<div class="box two positioned">two</div>
+		<div class="box three">three</div>
+		<blockquote>
+			检查nested的z-index值，为什么它没有显示在Two的前面？
+		</blockquote>
+	</body>
+</html>
