@@ -3,6 +3,12 @@
 	font-size: calc(1vw + 0.6em);
 }
 
+@media (min-width: 50em) {
+	:root {
+		font-size: 1.125em; /* 防止字体过大 */
+	}
+}
+
 *,
 *::before,
 *::after {
@@ -40,6 +46,12 @@ a:active {
 @media (min-width: 35em) {
 	.page-header {
 		padding: 1em;
+	}
+}
+
+@media (min-width: 50em) {
+	.page-header {
+		padding: 1em 4em;
 	}
 }
 
@@ -153,6 +165,12 @@ a:active {
 	}
 }
 
+@media (min-width: 50em) {
+	.nav-menu {
+		padding: 0 4em;
+	}
+}
+
 /* hero */
 .hero {
 	padding: 2em 1em;
@@ -169,6 +187,13 @@ a:active {
 		font-size: 1.2rem;
 	}
 }
+
+@media (min-width: 50em) {
+	.hero {
+		padding: 7em 6em;
+	}
+}
+
 /* main */
 main {
 	padding: 1em;
@@ -177,6 +202,12 @@ main {
 @media (min-width: 35em) {
 	main {
 		padding: 2em 1em;
+	}
+}
+
+@media (min-width: 50em) {
+	main {
+		padding: 2em 4em;
 	}
 }
 
