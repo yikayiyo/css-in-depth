@@ -175,7 +175,7 @@ a:active {
 .hero {
 	padding: 2em 1em;
 	text-align: center;
-	background-image: url("./images/coffee-beans.jpg");
+	background-image: url("./images/coffee-beans-small.jpg");
 	background-size: 100%;
 	color: #fff;
 	text-shadow: 0.1em 0.1em 0.3em #000;
@@ -185,12 +185,14 @@ a:active {
 	.hero {
 		padding: 5em 3em;
 		font-size: 1.2rem;
+		background-image: url("./images/coffee-beans-medium.jpg");
 	}
 }
 
 @media (min-width: 50em) {
 	.hero {
 		padding: 7em 6em;
+		background-image: url("./images/coffee-beans.jpg");
 	}
 }
 
