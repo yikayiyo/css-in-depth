@@ -1,0 +1,16 @@
+{
+  "name": "pattern-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "kss --config kss-config.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "legao",
+  "license": "ISC",
+  "devDependencies": {
+    "kss": "^3.0.1"
+  }
+}
