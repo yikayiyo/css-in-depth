@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS模块化——复杂一点儿的情况</title>
+		<style>
+			.media {
+				padding: 1.5em;
+				background-color: #eee;
+				border-radius: 0.5em;
+			}
+			.media::after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			.media__image {
+				float: left;
+				margin-right: 1.5em;
+			}
+			.media__body {
+				overflow: auto;
+				margin-top: 0;
+			}
+			.media__body > h4 {
+				margin-top: 0;
+			}
+			blockquote {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				background-color: #dfa;
+				width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="media">
+			<img class="media__image" src="runner.png" />
+			<div class="media__body">
+				<h4>Strength</h4>
+				<p>
+					Strength training is an important part of injury prevention. Focus on
+					your core&mdash; especially your abs and glutes.
+				</p>
+			</div>
+		</div>
+		<blockquote>模块由多个元素构成，注意各个元素的类命名方式。</blockquote>
+	</body>
+</html>
