@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fade</title>
+		<style>
+			.fade {
+				height: 200px;
+				width: 400px;
+				background-image: linear-gradient(to right, white, blue);
+				background-image: linear-gradient(
+					90deg,
+					white,
+					blue
+				); /* 等价于上面的 */
+			}
+			.stripes {
+				height: 200px;
+				width: 400px;
+				background-image: linear-gradient(
+					90deg,
+					red 40%,
+					white 40%,
+					white 60%,
+					blue 60%
+				);
+			}
+			.scrollbar {
+				height: 1em;
+				width: 400px;
+				border-radius: 0.3em;
+				background-image: repeating-linear-gradient(
+					-45deg,
+					#57b,
+					#57b 10px,
+					#148 10px,
+					#148 20px
+				);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="fade"></div>
+		<br />
+		<div class="stripes"></div>
+		<br />
+		<div class="scrollbar"></div>
+	</body>
+</html>
