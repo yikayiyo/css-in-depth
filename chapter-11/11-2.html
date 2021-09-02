@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shadows</title>
+		<style>
+			.button {
+				padding: 1em;
+				border: 0;
+				font-size: 0.8rem;
+				color: white;
+				border-radius: 0.5em;
+				background-image: linear-gradient(to bottom, #57b, #148);
+				box-shadow: 0.1em 0.1em 0.5em #124;
+			}
+			.button:active {
+				box-shadow: inset 0 0 0.5em #124, inset 0 0.5em 1em rgba(0, 0, 0, 0.4);
+			}
+			blockquote {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				background-color: #dfa;
+				width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="button">Sign up now</button>
+		<blockquote>active时有两个box-shadow。</blockquote>
+	</body>
+</html>
