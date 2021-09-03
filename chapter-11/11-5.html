@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Blend mode</title>
+	</head>
+	<style>
+		.container {
+			max-width: 80%;
+			margin: 0 auto;
+			text-align: center;
+		}
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+			grid-auto-rows: 1fr;
+			grid-gap: 1em;
+			grid-auto-flow: dense;
+			align-items: center;
+		}
+		.multiply-blend {
+			min-height: 400px;
+			background-image: url(images/bear.jpg), url(images/bear.jpg);
+			background-size: cover; /* one value to both images */
+			background-repeat: no-repeat;
+			background-position: -30vw, 30vw; /* the first will apply to the first image, the second to the second image */
+			background-blend-mode: multiply;
+		}
+		.luminosity-blend {
+			min-height: 400px;
+			background-image: url("images/bear.jpg");
+			background-color: #148;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-blend-mode: luminosity;
+		}
+		.color-blend {
+			min-height: 400px;
+			background-image: linear-gradient(0deg, blue, black),
+				/* color mode 和 luminosity mode 效果相反。为了得到相同的结果，颜色要放在图片上面。*/
+					url("images/elephants.jpg");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-blend-mode: color;
+		}
+		.add-texture {
+			min-height: 400px;
+			background-image: url("images/scratches.png"), url("images/bear.jpg");
+			background-size: 200px, cover;
+			background-repeat: repeat, no-repeat;
+			background-position: center center;
+			background-blend-mode: soft-light;
+		}
+		.text-blend {
+			background-image: url("images/bear.jpg");
+			background-size: cover;
+			background-position: center;
+			padding: 15em 0 1em;
+		}
+		.text-blend > h1 {
+			margin: 0;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 6rem;
+			background-color: #c33;
+			color: #808080;
+			border: 0.1em solid #ccc;
+			border-width: 0.1em 0;
+			mix-blend-mode: hard-light;
+		}
+	</style>
+	<body>
+		<div class="container">
+			<h1>blend mode gallery</h1>
+			<div class="gallery">
+				<div class="multiply-blend"></div>
+				<div class="luminosity-blend"></div>
+				<div class="color-blend"></div>
+				<div class="add-texture"></div>
+				<div class="text-blend">
+					<h1>Hello Kitty</h1>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
