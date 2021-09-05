@@ -1,3 +1,4 @@
+/* -------------base------------- */
 html {
 	--brand-green: hsl(162, 87%, 21%);
 	--dark-green: hsl(162, 88%, 30%);
@@ -28,6 +29,9 @@ h3,
 h4 {
 	font-family: Georgia, serif;
 }
+p {
+	margin: 1.5em 0;
+}
 a {
 	color: var(--medium-green);
 }
@@ -50,6 +54,7 @@ a:active {
 	justify-content: space-between;
 	max-width: 1080px;
 	margin: 0 auto;
+	padding: 0.625em 0;
 }
 .home-link {
 	color: var(--text-color);
@@ -60,7 +65,11 @@ a:active {
 }
 .top-nav {
 	display: flex;
-	list-style: none;
+	list-style-type: none;
+	margin: 0;
+}
+.top-nav > li + li {
+	margin-left: 0.625em;
 }
 .top-nav a {
 	display: block;
@@ -90,11 +99,13 @@ a:active {
 .hero__inner {
 	max-width: 1080px;
 	margin: 0 auto;
-	padding: 50px 0 200px;
+	padding: 5.5625em 12.5em 12.5em 0;
 	text-align: right;
 }
 .hero h2 {
 	font-size: 1.95rem;
+	margin-top: 0;
+	margin-bottom: 0.625rem;
 }
 .button {
 	display: inline-block;
@@ -126,10 +137,30 @@ a:active {
 .tile-row > * {
 	flex: 1;
 }
+.tile-row > * + * {
+	margin-left: 1.5625em;
+}
 .tile {
 	background-color: var(--white);
 	border-radius: 0.3em;
+	padding: 1.5625em;
 }
+.tile > h4 {
+	margin-bottom: 1.5em; /* the space beneath the heading is always the same, even if it’s not followed immediately by a paragraph. */
+}
+.tag-list {
+	list-style-type: none;
+	padding-left: 0;
+}
+.tag-list > li {
+	display: inline;
+	padding: 0.3rem 0.5rem;
+	font-size: 0.8rem;
+	border-radius: 0.2rem;
+	background-color: var(--light-gray);
+	line-height: 2.6;
+}
+
 .page-footer {
 	margin-top: 3em;
 	padding: 1em 0;
