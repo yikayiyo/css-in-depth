@@ -1,0 +1,44 @@
+body {
+	background-color: hsl(211, 26%, 77%);
+	font-family: Helvetica, Arial, sans-serif;
+}
+img {
+	max-width: 100%;
+}
+
+.container {
+	max-width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-auto-rows: 1fr;
+	grid-gap: 1em;
+	grid-auto-flow: dense;
+	align-items: center;
+}
+
+.card {
+	padding: 0.5em;
+	margin: 0 auto;
+	background-color: white;
+	max-width: 300px;
+}
+
+.card1 {
+	transform: rotate(15deg);
+}
+
+.card2 {
+	transform: scale(0.5);
+}
+
+.card3 {
+	transform: skew(20deg);
+}
+
+.card4 {
+	transform: translate(20px, 40px);
+}
