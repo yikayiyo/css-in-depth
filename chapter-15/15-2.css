@@ -109,7 +109,15 @@ img {
 		opacity: 1;
 		transform: translate(0em);
 	}
-
+	.nav-links > li:nth-child(2) .nav-links__label {
+		transition-delay: 0.1s;
+	}
+	.nav-links > li:nth-child(3) .nav-links__label {
+		transition-delay: 0.2s;
+	}
+	.nav-links > li:nth-child(4) .nav-links__label {
+		transition-delay: 0.3s;
+	}
 	.nav-links__icon {
 		transition: transform 0.2s ease-out;
 	}
