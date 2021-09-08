@@ -1,0 +1,39 @@
+.row {
+	display: flex;
+	justify-content: center;
+	border: 1px solid #dfa;
+	padding: 1em;
+	margin-top: 1em;
+}
+
+.box {
+	box-sizing: border-box;
+	width: 150px;
+	margin: 0 2em;
+	padding: 3em 0;
+	text-align: center;
+	background-color: beige;
+}
+
+.ip {
+	transform: perspective(200px) rotateX(30deg);
+}
+
+.cp {
+	perspective: 200px;
+}
+.cp > .box {
+	transform: rotateX(30deg);
+}
+
+.po {
+	perspective-origin: left bottom;
+}
+
+blockquote {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-color: #dfa;
+	width: 200px;
+}

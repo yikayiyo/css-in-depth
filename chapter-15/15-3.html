@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>透视距离</title>
+		<link rel="stylesheet" href="15-3.css" />
+	</head>
+	<body>
+		<div class="row">
+			<div class="box ip">One</div>
+			<div class="box ip">Two</div>
+			<div class="box ip">Three</div>
+			<div class="box ip">Four</div>
+		</div>
+		<div class="row cp">
+			<div class="box">One</div>
+			<div class="box">Two</div>
+			<div class="box">Three</div>
+			<div class="box">Four</div>
+		</div>
+		<div class="row cp po">
+			<div class="box">One</div>
+			<div class="box">Two</div>
+			<div class="box">Three</div>
+			<div class="box">Four</div>
+		</div>
+		<blockquote>
+			第一行，每个元素都设置了相同的perspective()，所以它们看上去都一样。<br />
+			第二行，给容器设置了perspective()，因此子元素会共享这个值。<br />
+			第三行，调整了透视的源点到左下方。
+		</blockquote>
+	</body>
+</html>
