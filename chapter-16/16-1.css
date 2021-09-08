@@ -1,0 +1,22 @@
+.box {
+	width: 100px;
+	height: 100px;
+	background-color: green; /* 会被动画中的设置覆盖 */
+	animation: over-and-back 1.5s linear 3; /* 3代表动画重复次数 */
+}
+
+@keyframes over-and-back {
+	0% {
+		background-color: hsl(0, 50%, 50%);
+		transform: translate(0);
+	}
+
+	50% {
+		transform: translate(50px);
+	}
+
+	100% {
+		transform: translate(0);
+		background-color: hsl(270, 50%, 90%);
+	}
+}
