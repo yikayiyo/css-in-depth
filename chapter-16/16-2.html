@@ -93,9 +93,10 @@
 			</div>
 		</main>
 		<blockquote>
-			虽然为各个元素设置了动画延迟，但是有些元素提前出现在了页面上。这是因为动画相关属性只在动画执行期间生效。<br />
 			注释掉.flyin-grid__item中的<code>nimation-fill-mode: backwards;</code
-			>这一行，刷新页面看看区别。
+			>这一行，刷新页面看看区别。<br />
+			注释掉<code>backface-visibility: hidden;</code>这一行看看区别。<br />
+			虽然为各个元素设置了动画延迟，但是有些元素提前出现在了页面上。这是因为动画相关属性只在动画执行期间生效。<br />
 		</blockquote>
 	</body>
 </html>
