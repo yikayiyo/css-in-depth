@@ -85,6 +85,18 @@
 					transform: translateX(-0.3em);
 				}
 			}
+			blockquote {
+				position: absolute;
+				right: 0;
+				background-color: #dfa;
+				width: 200px;
+			}
+
+			code {
+				padding: 0.1em;
+				border-radius: 0.1em;
+				background-color: rgba(211, 211, 211, 0.322);
+			}
 		</style>
 	</head>
 	<body>
@@ -94,6 +106,7 @@
 				<textarea id="trip" name="about-my-trip" rows="5"></textarea>
 				<button type="submit" id="submit-button">Save</button>
 			</form>
+			<blockquote>输入内容，暂停一秒后，按钮晃动，提示用户提交。</blockquote>
 		</body>
 		<script>
 			var input = document.getElementById("trip");

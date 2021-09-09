@@ -58,6 +58,18 @@
 					transform: rotate(360deg);
 				}
 			}
+			blockquote {
+				position: absolute;
+				right: 0;
+				background-color: #dfa;
+				width: 200px;
+			}
+
+			code {
+				padding: 0.1em;
+				border-radius: 0.1em;
+				background-color: rgba(211, 211, 211, 0.322);
+			}
 		</style>
 	</head>
 	<body>
@@ -67,6 +79,7 @@
 				<textarea id="trip" name="about-my-trip" rows="5"></textarea>
 				<button type="submit" id="submit-button">Save</button>
 			</form>
+			<blockquote>点击save按钮，出现加载提示。刷新页面恢复。</blockquote>
 		</body>
 		<script>
 			var input = document.getElementById("trip");

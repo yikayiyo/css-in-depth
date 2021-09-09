@@ -142,6 +142,7 @@ img {
 
 .flyin-grid__item {
 	animation: fly-in 600ms ease-in;
+	/*注释掉下面代码观察页面效果*/
 	/* animation-fill-mode: backwards; */
 	/* backface-visibility: hidden; */
 }
