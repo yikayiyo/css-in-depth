@@ -1,102 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Fade</title>
-		<style>
-			.container {
-				max-width: 80%;
-				margin: 0 auto;
-			}
-			.gallery {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-				grid-auto-rows: 1fr;
-				grid-gap: 1em;
-				grid-auto-flow: dense;
-				align-items: center;
-			}
-			.fade {
-				height: 200px;
-				background-image: linear-gradient(to right, white, blue);
-				background-image: linear-gradient(
-					90deg,
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Fade</title>
+	<style>
+		.container {
+			max-width: 80%;
+			margin: 0 auto;
+		}
+
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			grid-auto-rows: 1fr;
+			grid-gap: 1em;
+			grid-auto-flow: dense;
+			align-items: center;
+		}
+
+		.fade {
+			height: 200px;
+			background-image: linear-gradient(to right, white, blue);
+			background-image: linear-gradient(90deg,
 					white,
-					blue
-				); /* 等价于上面的 */
-			}
-			.stripes {
-				height: 200px;
-				background-image: linear-gradient(
-					90deg,
+					blue);
+			/* 等价于上面的 */
+		}
+
+		.stripes {
+			height: 200px;
+			background-image: linear-gradient(90deg,
 					red 40%,
 					white 40%,
 					white 60%,
-					blue 60%
-				);
-			}
-			.scrollbar {
-				height: 1em;
-				border-radius: 0.3em;
-				background-image: repeating-linear-gradient(
-					-45deg,
+					blue 60%);
+		}
+
+		.scrollbar {
+			height: 1em;
+			border-radius: 0.3em;
+			background-image: repeating-linear-gradient(-45deg,
 					#57b,
 					#57b 10px,
 					#148 10px,
-					#148 20px
-				);
-			}
-			.radial-gradient {
-				height: 200px;
-				background-image: radial-gradient(white, blue);
-			}
-			.radial-circle-gradient {
-				height: 200px;
-				background-image: radial-gradient(circle, white, midnightblue);
-			}
-			.positioned-gradient {
-				height: 200px;
-				background-image: radial-gradient(3em at 25% 25%, white, midnightblue);
-			}
-			.multi-colors-gradient {
-				height: 200px;
-				background-image: radial-gradient(
-					circle,
+					#148 20px);
+		}
+
+		.radial-gradient {
+			height: 200px;
+			background-image: radial-gradient(white, blue);
+		}
+
+		.radial-circle-gradient {
+			height: 200px;
+			background-image: radial-gradient(circle, white, midnightblue);
+		}
+
+		.positioned-gradient {
+			height: 200px;
+			background-image: radial-gradient(3em at 25% 25%, white, midnightblue);
+		}
+
+		.multi-colors-gradient {
+			height: 200px;
+			background-image: radial-gradient(circle,
 					red 0%,
 					yellow 75%,
-					blue 100%
-				);
-			}
-			.circles {
-				height: 200px;
-				background-image: repeating-radial-gradient(
-					circle,
+					black 100%);
+		}
+
+		.circles {
+			height: 200px;
+			background-image: repeating-radial-gradient(circle,
 					white 0,
 					red 1em,
 					red 3em,
-					#dfa 4em
-				);
-			}
-			.center-text {
-				text-align: center;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<h1 class="center-text">Gradients gallery</h1>
-			<div class="gallery">
-				<div class="fade"></div>
-				<div class="stripes"></div>
-				<div class="scrollbar"></div>
-				<div class="radial-gradient"></div>
-				<div class="radial-circle-gradient"></div>
-				<div class="positioned-gradient"></div>
-				<div class="multi-colors-gradient"></div>
-				<div class="circles"></div>
-			</div>
+					#dfa 4em);
+		}
+
+		.center-text {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1 class="center-text">Gradients gallery</h1>
+		<div class="gallery">
+			<div class="fade"></div>
+			<div class="stripes"></div>
+			<div class="scrollbar"></div>
+			<div class="radial-gradient"></div>
+			<div class="radial-circle-gradient"></div>
+			<div class="positioned-gradient"></div>
+			<div class="multi-colors-gradient"></div>
+			<div class="circles"></div>
 		</div>
-	</body>
+	</div>
+</body>
+
 </html>
