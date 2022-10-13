@@ -40,8 +40,13 @@
 				.portfolio {
 					display: grid;
 					grid-template-columns: repeat(
-						/* place as many tracks onto the grid as it can fit */ auto-fill,
-						/* at least 200px wide */ minmax(200px, 1fr)
+						/* place as many tracks onto the grid as it can fit */ 
+						auto-fill,
+						/* auto-fit, */
+
+						/* at least 200px wide */ 
+						minmax(200px, 1fr)
+						/* minmax(50px, 1fr) */
 					);
 					grid-auto-rows: 1fr; /* Sets an implicit horizontal grid track */
 					grid-gap: 1em;
@@ -110,11 +115,12 @@
 			</figure>
 		</div>
 		<blockquote>
-			repeat中<code>auto-fill vs auto-fit</code>有什么<a
+			1. repeat 中<code> auto-fill vs auto-fit </code>有什么<a
 				href="https://gridbyexample.com/examples/example37/"
 				>区别</a
 			>？<br />
-			调整窗口大小，看看grid items是如何调整各自的位置的。
+			2. 调整窗口大小，看看 grid items 是如何调整各自的位置的（和 <code>grid-auto-flow: dense;</code> 有关
+
 		</blockquote>
 	</body>
 </html>
